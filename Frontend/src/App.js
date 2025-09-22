@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Components/Auth/Login';
-import Register from './Components/Auth/Register';
+// Registration removed
 import UserDetails from './Components/Auth/UserDetails';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          {/* register route removed */}
           <Route path="/userDetails" element={<UserDetails />} />
           {/* Add more routes here if needed */}
         </Routes>

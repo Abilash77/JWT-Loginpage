@@ -71,25 +71,20 @@ const UserDetails = () => {
     }
   };
 
-  if (!user) return <p>Loading user info...</p>;
+  if (!user) {
+    return (
+      <div className={styles.authContainer}>
+        <div className={styles.authForm}>
+          <h2 className={styles.authTitle}>Welcome to the Dashboard</h2>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.authContainer}>
       <div className={styles.authForm}>
-        <h2 className={styles.authTitle}>User Details</h2>
-        <p>
-          <strong>Name:</strong> {user.name}
-        </p>
-        <p>
-          <strong>Email:</strong> {user.email}
-        </p>
-        <p>
-          <strong>Mobile:</strong> {user.mobile}
-        </p>
-
-        <button onClick={handleLogout} className={styles.submitButton}>
-          Logout
-        </button>
+        <h2 className={styles.authTitle}>Welcome to the Dashboard</h2>
       </div>
     </div>
   );

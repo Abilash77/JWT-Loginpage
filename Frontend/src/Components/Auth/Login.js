@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import styles from './Auth.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
@@ -53,20 +53,16 @@ const Login = () => {
         <h2 className={styles.authTitle}>Login to your account</h2>
 
         <div className={styles.inputGroup}>
-          <label htmlFor="email" className={styles.label}>Email</label>
+          <label htmlFor="username" className={styles.label}>Username</label>
           <input
-            id="email"
-            type="email"
+            id="username"
+            type="text"
             className={styles.input}
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'Invalid email address',
-              },
+            {...register('username', {
+              required: 'Username is required',
             })}
           />
-          {errors.email && <div className={styles.error}>{errors.email.message}</div>}
+          {errors.username && <div className={styles.error}>{errors.username.message}</div>}
         </div>
 
         <div className={styles.inputGroup}>
@@ -77,10 +73,6 @@ const Login = () => {
             className={styles.input}
             {...register('password', {
               required: 'Password is required',
-              minLength: {
-                value: 6,
-                message: 'Password must be at least 6 characters',
-              },
             })}
           />
           {errors.password && <div className={styles.error}>{errors.password.message}</div>}
@@ -90,10 +82,7 @@ const Login = () => {
           Login
         </button>
 
-        <p className={styles.toggleText}>
-          Don't have an account?{' '}
-          <Link to="/register" className={styles.toggleLink}>Register</Link>
-        </p>
+        {/* Registration removed */}
       </form>
     </div>
   );
